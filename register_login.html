@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberBlog - Register</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="auth-container">
+        <h2>Create an Account</h2>
+        <form action="/register" method="POST" class="auth-form">
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter a password" required>
+            </div>
+            <button type="submit" class="btn">Register</button>
+            <p>Already have an account? <a href="login.html">Login here</a></p>
+        </form>
+    </div>
+</body>
+
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-app.js";
+    import { getDatabase } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-database.js";
+    import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-auth.js";
+  
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyDjQaDACb3K08Rai9WHBl5qjttj0_OYHzU",
+      authDomain: "blogsite-403cf.firebaseapp.com",
+      databaseURL: "https://blogsite-403cf-default-rtdb.firebaseio.com",
+      projectId: "blogsite-403cf",
+      storageBucket: "blogsite-403cf.firebasestorage.app",
+      messagingSenderId: "187790274016",
+      appId: "1:187790274016:web:cd7f55fa2d6906bdb94f85"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app);
+    const auth = getAuth();
+  
+    // Event listener for sign-up
+    signUp.addEventListener('click', (e) => {
+      var email = document.getElementById('email').value;
+      var password = document.getElementById('password').value;
+  
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          // Signed up
+          const user = userCredential.user;
+          alert('User created');
+          // Additional actions here
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          alert(errorMessage);
+          // Handle the error
+        });
+    });
+  </script>
+  
+</html>
