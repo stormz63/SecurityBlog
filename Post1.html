@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberBlog - Post 1</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+        h2
+        {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <div>
+                <h2>Welcome to the first post!</h2>
+                <h2>How to use Nmap</h2>
+                <a href="/index.html">
+                    <button>Home</button>
+                </a>
+            </div>
+        </div>
+    </header>
+    <br>
+    <p>In this article I wont go over all the Nmap commands.</p>
+    <br>
+
+    <div>
+        <h1>What is Nmap?</h1>
+        <p>Nmap (Network Mapper) is an open-source tool used for network exploration and security auditing. It is widely used by network administrators, cybersecurity professionals, and hackers alike to discover hosts and services on a computer network, thus mapping the network.</p>
+        <br>
+        <div>
+            <h1>What Does Nmap do?</h1>
+            <li>Host Discovery: Identifying devices and hosts that are up and running.</li> 
+            <li>Port Scanning: Checking which ports are open and which services are running.</li>
+            <li>Service Detection: Identifying the services running on the open ports, including their versions.</li>
+            <li>Operating System Detection: Nmap can guess the operating system of a target device.</li>
+            <li>Scriptable Interaction: With Nmap Scripting Engine (NSE), users can automate tasks for vulnerability scanning and exploitation.</li>
+        </div>
+        <br>
+        <div>
+            <h1>How to install Nmap</h1>
+            <p>Debian/Ubuntu:</p>
+            <p>sudo apt install nmap</p>
+            <br>
+            <p>Fedora/RHEL:</p>
+            <p>sudo dnf install nmap</p>
+        </div>
+        <div>
+            <h1>Basic Commands</h1>
+            <p>1. Scanning a Single IP Address: To start, you can scan a single target IP address to see what services are running.</p>
+            <h3>nmap 192.168.0.1</h3>
+            <p>2. Scanning a Range of IPs:</p>
+            <h3>nmap 192.168.1.1-10</h3>
+        </div>
+    </div>
+</body>
+</html>
