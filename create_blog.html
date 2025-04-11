@@ -41,6 +41,33 @@
         <div class="container"></div>
     </footer>
 
+    <script>
+        const identity = netlifyIdentity;
+        identity.init();
+
+        document.getElementById('loginBtn').addEventListener('click', () => {
+            identity.open();
+        });
+
+        document.getElementById('logoutBtn').addEventListener('click', () => {
+            identity.logout();
+        });
+
+        identity.on('login', (user) => {
+            document.getElementById('message').textContent = `Welcome, ${user.user_metadata.full_name || user.email}`;
+            document.getElementById('loginBtn').style.display = 'none';
+            document.getElementById('logoutBtn').style.display = 'inline-block';
+            document.getElementById('blogForm').style.display = 'block';
+        });
+
+        identity.on('logout', () => {
+            document.getElementById('message').textContent = 'Please log in to create a blog.';
+            document.getElementById('loginBtn').style.display = 'inline-block';
+            document.getElementById('logoutBtn').style.display = 'none';
+            document.getElementById('blogForm').style.display = 'none';
+        });
+    </script>
+
     <script src="/Backend/app.js"></script>
 </body>
 </html>
