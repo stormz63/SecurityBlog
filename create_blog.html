@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CyberBlog - Create a blog</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -22,11 +23,24 @@
         </div>
     </header>
 
-        <h1>Creating a blog coming soon!</h1>
-        
-    <footer>
-        <div class="container">
+    <div class="container">
+        <h1>Create Your Blog</h1>
+        <button id="loginBtn">Login / Sign Up</button>
+        <button id="logoutBtn" style="display: none;">Logout</button>
+
+        <div id="blogForm" style="display: none;">
+            <input type="text" id="blogTitle" placeholder="Blog Title" required><br>
+            <textarea id="blogContent" placeholder="Blog Content" required></textarea><br>
+            <button id="submitBlog">Submit Blog</button>
         </div>
+
+        <p id="message"></p>
+    </div>
+
+    <footer>
+        <div class="container"></div>
     </footer>
+
+    <script src="/Backend/app.js"></script>
 </body>
 </html>
